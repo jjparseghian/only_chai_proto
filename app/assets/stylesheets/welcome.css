@@ -1,0 +1,51 @@
+body {
+    background-image: url('http://rack.0.mshcdn.com/media/ZgkyMDEzLzA2LzE3LzQ2L2ZpdG5lc3NuYWlsLmQwMGJmLmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/0407ed24/fbf/fitness-nail.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
+#banner_logo {
+  margin-top: 7%;
+}
+
+#banner_logo img {
+  display: table;
+  margin: 0px auto;
+}
+
+#banner_info {
+  margin-bottom: 10%;
+}
+
+#banner_info h1 span {
+  color: rgb(45, 135, 254);
+}
+
+#banner_info h1, p {
+  color: white;
+  text-align: center;
+  margin: 30px 0px;
+}
+
+#session_btns {
+  display: table;
+  margin: auto;
+}
+
+#session_btns ul {
+  list-style: none;
+  margin: 0px;
+}
+
+#session_btns ul li {
+  display: inline-block;
+  margin: 0px 12px;
+}
+
+#links li a:hover {
+  background-color: #2CBFCD;
+}
+
