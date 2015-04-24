@@ -1,14 +1,19 @@
 class SessionsController < ApplicationController
-  def signin
-    @user = User.find_by(id: params[:id])
+  def login
+    # render 'login'
+  end
 
-    if @user && @user.authenticate(email: params[:email], password: params[:password])
+  def signin
+    @user = User.find_by(email: params[:user][:email])
+
+    if @user && @user.authenticate(params[:user][:password])
       # redirect to members page
       session[:user_id] = @user.id
       redirect_to '/'
     else
       flash[:error] = "Login error"
       p "something went wrong"
+      render 'login'
     end
   end
 
