@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'signout' => 'sessions#signout'
 
+  resources :profiles
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
