@@ -18,6 +18,7 @@ class CreateFitnessProfessionalProfiles < ActiveRecord::Migration
       t.text :appointment_lengths, array: true, default: []
       t.text :group_training, array: true, default: []
       t.boolean :consent_waiver
+      t.references :user
 
       t.timestamps null: false
     end

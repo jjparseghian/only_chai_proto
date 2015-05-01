@@ -20,6 +20,7 @@ class CreateMemberProfiles < ActiveRecord::Migration
       t.string :appointment_lengths, array: true, default: []
       t.string :group_training, array: true, default: []
       t.boolean :consent_waiver
+      t.references :user
 
       t.timestamps null: false
     end
