@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150429184106) do
     t.text     "appointment_lengths",          default: [],              array: true
     t.text     "group_training",               default: [],              array: true
     t.boolean  "consent_waiver"
+    t.integer  "user_id"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
@@ -71,11 +72,14 @@ ActiveRecord::Schema.define(version: 20150429184106) do
     t.string   "appointment_lengths",  default: [],              array: true
     t.string   "group_training",       default: [],              array: true
     t.boolean  "consent_waiver"
+    t.integer  "user_id"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
   end
 
   create_table "user_types", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
