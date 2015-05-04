@@ -4,5 +4,6 @@
     Email: <%= f.email_field :email %><br />
     Password: <%= f.password_field :password %><br />
     Password Confirmation: <%= f.password_field :password_confirmation %><br />
+    Client: <%= f.radio_button 'user_type', 'Client' %>&nbsp&nbsp Fitness Professional <%= f.radio_button 'user_type', 'Fitness_Professional' %><br />
     <%= f.submit "Sign Up" %>
 <% end %>
