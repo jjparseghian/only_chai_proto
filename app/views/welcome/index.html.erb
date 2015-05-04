@@ -5,10 +5,12 @@
       OnlyChai is your new secret weapon in the battle for better health.</p>
     </div>
     <%= image_tag("only_chai_logo.png") %>
-    <div id="session_btns">
-     <ul>
-      <li><a href="/signin" class="button large radius">Login</a></li>
-      <li><a href="/signup" class="button large radius success">Signup</a></li>
-    </ul>
-  </div>
+    <% if !current_user %>
+      <div id="session_btns">
+        <ul>
+          <li><a href="/signin" class="button large radius">Login</a></li>
+          <li><a href="/signup" class="button large radius success">Signup</a></li>
+        </ul>
+      </div>
+    <% end %>
 </div>
