@@ -18,9 +18,10 @@ class CreateFitnessProfessionalProfiles < ActiveRecord::Migration
       t.text :appointment_lengths, array: true, default: []
       t.text :group_training, array: true, default: []
       t.boolean :consent_waiver
-      t.references :user
+      t.references :user, index: true
 
       t.timestamps null: false
     end
+    add_foreign_key :fitness_professional_profiles, :users
   end
 end
