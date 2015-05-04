@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20150429184106) do
     t.datetime "updated_at",                                null: false
   end
 
+  add_index "fitness_professional_profiles", ["user_id"], name: "index_fitness_professional_profiles_on_user_id", using: :btree
+
   create_table "member_profiles", force: :cascade do |t|
     t.string   "ethnicity"
     t.string   "height"
@@ -77,12 +79,16 @@ ActiveRecord::Schema.define(version: 20150429184106) do
     t.datetime "updated_at",                        null: false
   end
 
+  add_index "member_profiles", ["user_id"], name: "index_member_profiles_on_user_id", using: :btree
+
   create_table "user_types", force: :cascade do |t|
     t.string   "type"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "user_types", ["user_id"], name: "index_user_types_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      null: false
@@ -99,4 +105,7 @@ ActiveRecord::Schema.define(version: 20150429184106) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "fitness_professional_profiles", "users"
+  add_foreign_key "member_profiles", "users"
+  add_foreign_key "user_types", "users"
 end
