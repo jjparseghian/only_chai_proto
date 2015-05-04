@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       "successful user creation"
-      redirect_to '/'
+      redirect_to new_profile_path
     else
       flash[:notice] = "Error Signing Up"
     end
@@ -65,6 +65,6 @@ class SessionsController < ApplicationController
   private
 
     def allowed_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_type, :phone, :gender, :birth_date)
     end
 end
