@@ -20,9 +20,10 @@ class CreateMemberProfiles < ActiveRecord::Migration
       t.string :appointment_lengths, array: true, default: []
       t.string :group_training, array: true, default: []
       t.boolean :consent_waiver
-      t.references :user
+      t.references :user, index: true
 
       t.timestamps null: false
     end
+    add_foreign_key :member_profiles, :users
   end
 end
