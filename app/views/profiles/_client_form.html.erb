@@ -1,1 +1,96 @@
-<p>I will contain a form for clients to fill out</p>
+<div class="small-6 small-centered columns">
+  <%= form_tag('/profiles') do %>
+    <%= label_tag :ethnicity %>
+    <%= radio_button_tag "client[ethnicity]", "white / caucasian" %>
+    <%= radio_button_tag "client[ethnicity]", "African American" %>
+    <%= radio_button_tag "client[ethnicity]", "Latin American" %>
+    <%= radio_button_tag "client[ethnicity]", "Asian / Pacific Island Descent" %>
+    <%= radio_button_tag "client[ethnicity]", "Native American" %>
+    <%= radio_button_tag "client[ethnicity]", "other" %>
+
+    <%= label_tag :height %>
+    <%= text_field_tag "client[height]" %>
+
+    <%= label_tag :weight %>
+    <%= text_field_tag "client[weight]" %>
+
+    <%= label_tag :smoking_status %>
+    <%= text_field_tag "client[smoking_status]" %>
+
+    <%= label_tag :activity_level %>
+    <%= text_field_tag "client[activity_level]" %>
+
+    <%= label_tag :training_location %>
+    <%= check_box_tag "client[training_location][]", "own training equipment and space" %>
+    <%= check_box_tag "client[training_location][]", "train at home, but no equipment" %>
+    <%= check_box_tag "client[training_location][]", "independent facility" %>
+    <%= check_box_tag "client[training_location][]", "trainer's facility" %>
+    <%= check_box_tag "client[training_location][]", "fitness facility requires membership, but allows outside trainers" %>
+    Other: <%= text_field_tag "client[training_location][]" %>
+
+    <%= label_tag :goals %>
+    <%= check_box_tag "client[goals][]", "improve chronic conditions" %>
+    <%= check_box_tag "client[goals][]", "get lean / fat loss" %>
+    <%= check_box_tag "client[goals][]", "gain lean mass / muscle" %>
+    <%= check_box_tag "client[goals][]", "train for event" %>
+    <%= check_box_tag "client[goals][]", "train for sport" %>
+    <%= check_box_tag "client[goals][]", "train for specific fitness component" %>
+    Other: <%= text_field_tag "goals[]" %>
+
+    <%= label_tag :goal_specifics %>
+    <%= text_area_tag "client[goal_specifics]" %>
+
+    <%= label_tag :medical_conditions %>
+    <%= check_box_tag "client[medical_conditions][]", "disease risk factors" %>
+    <%= check_box_tag "client[medical_conditions][]", "cardiovascular disease" %>
+    <%= check_box_tag "client[medical_conditions][]", "pulminary disease" %>
+    <%= check_box_tag "client[medical_conditions][]", "metabolic disease" %>
+    <%= check_box_tag "client[medical_conditions][]", "neuromuscular disease" %>
+    <%= check_box_tag "client[medical_conditions][]", "immune-compromised condition" %>
+    <%= check_box_tag "client[medical_conditions][]", "prefer not to disclose" %>
+    Other: <%= text_field_tag "client[medical_conditions][]" %>
+
+    <%= label_tag :past_injury %>
+    <%= check_box_tag "client[past_injury][]", "upper body" %>
+    <%= check_box_tag "client[past_injury][]", "lower back / torso" %>
+    <%= check_box_tag "client[past_injury][]", "lower body" %>
+    Other: <%= text_field_tag "client[past_injury][]" %>
+
+    <%= label_tag :injury_history %>
+    <%= check_box_tag "client[injury_history][]", "head or neck" %>
+    <%= check_box_tag "client[injury_history][]", "chest" %>
+    <%= check_box_tag "client[injury_history][]", "shoulder" %>
+    <%= check_box_tag "client[injury_history][]", "elbow" %>
+    <%= check_box_tag "client[injury_history][]", "wrist or hand" %>
+    <%= check_box_tag "client[injury_history][]", "upper back" %>
+    <%= check_box_tag "client[injury_history][]", "lower back" %>
+    <%= check_box_tag "client[injury_history][]", "torso or groin" %>
+    <%= check_box_tag "client[injury_history][]", "hip" %>
+    <%= check_box_tag "client[injury_history][]", "knee" %>
+    <%= check_box_tag "client[injury_history][]", "foot or ankle" %>
+
+    <%= label_tag :training_style %>
+    <%= check_box_tag "client[training_style][]", "motivator" %>
+    <%= check_box_tag "client[training_style][]", "coach" %>
+    <%= check_box_tag "client[training_style][]", "olympian" %>
+    <%= check_box_tag "client[training_style][]", "drill sargeant" %>
+    <%= check_box_tag "client[training_style][]", "analyzer" %>
+
+    <%= label_tag :appointment_lengths %>
+    <%= check_box_tag "client[appointment_lengths][]", "30" %>
+    <%= check_box_tag "client[appointment_lengths][]", "60" %>
+    <%= check_box_tag "client[appointment_lengths][]", "90" %>
+
+    <%= label_tag :group_training %>
+    <%= check_box_tag "client[group_training][]", "1-1" %>
+    <%= check_box_tag "client[group_training][]", "2-4" %>
+    <%= check_box_tag "client[group_training][]", "5-10" %>
+    <%= check_box_tag "client[group_training][]", "10+" %>
+
+    <%= label_tag :consent_waiver %>
+    <%= check_box_tag "client[consent_waiver]", true %>
+
+    <%= submit_tag "Submit", :class => "button radius" %>
+
+  <% end %>
+</div>
