@@ -6,19 +6,19 @@ class CreateMemberProfiles < ActiveRecord::Migration
       t.string :weight
       t.string :smoking_status
       t.string :activity_level
-      t.text :training_location, array: true, default: []
-      t.text :my_own_space
-      t.text :independent_facility
-      t.text :trainer_facility
-      t.text :fitness_facility
-      t.text :goals, array: true, default: []
+      t.text :training_location, array: true
+      t.text :own_space_descrip
+      t.text :independent_facility_descrip
+      t.text :trainer_facility_descrip
+      t.text :fitness_facility_descrip
+      t.text :goals, array: true
       t.text :goal_specifics
-      t.text :medical_conditions, array: true, default: []
-      t.text :past_injury, array: true, default: []
-      t.text :injury_history, array: true, default: []
-      t.text :training_style, array: true, default: []
-      t.string :appointment_lengths, array: true, default: []
-      t.string :group_training, array: true, default: []
+      t.text :medical_conditions, array: true
+      t.text :past_injury, array: true
+      t.text :injury_history, array: true
+      t.text :training_style, array: true
+      t.string :appointment_lengths, array: true
+      t.string :group_training, array: true
       t.boolean :consent_waiver
       t.references :user, index: true
 
