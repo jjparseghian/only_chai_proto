@@ -5,13 +5,25 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @client = MemberProfile.new(client_params)
-    @fitness_professional = FitnessProfessionalProfile.new(fitness_professional_params)
-
-    if @client.save || @fitness_professional.save
-      p "Profile created successfully"
+    p params
+    user = User.find(session[:user_id])
+    p user
+    if user.user_type == "Client"
+      @client = MemberProfile.new(client_params)
+      if @client.save
+        p "Client profile created successfully"
+      else
+        p "Something went wrong"
+      end
+    elsif user.user_type == "Fitness Professional"
+      @fitness_professional = FitnessProfessionalProfile.new(fitness_professional_params)
+      if @fitness_professional.save
+        p "Successfully created fitness professional profile"
+      else
+        p "Error creating fitness professional profile"
+      end
     else
-      p "Something went wrong"
+      p "Problem creating profile either profile"
     end
   end
 
@@ -28,7 +40,26 @@ class ProfilesController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(:ethnicity, :height, :weight, :smoking_status, :activity_level, :training_location, :my_own_space, :independent_facility, :trainer_facility, :goals, :goal_specifics, :medical_conditions, :past_injury, :injury_history, :training_style, :appointment_lengths, :group_training, :consent_waiver, :user_id)
+    params.require(:client).permit(:ethnicity,
+                                    :height,
+                                    :weight,
+                                    :smoking_status,
+                                    :activity_level,
+                                    :own_space_descrip,
+                                    :independent_facility_descrip,
+                                    :trainer_facility_descrip,
+                                    :fitness_facility_descrip,
+                                    :goal_specifics,
+                                    :consent_waiver,
+                                    :user_id,
+                                    :injury_history => [],
+                                    :past_injury => [],
+                                    :medical_conditions => [],
+                                    :goals => [],
+                                    :training_location => [],
+                                    :training_style => [],
+                                    :appointment_lengths => [],
+                                    :group_training => [])
   end
 
   def fitness_professional_params
