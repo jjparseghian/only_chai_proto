@@ -17,8 +17,8 @@ class CreateMemberProfiles < ActiveRecord::Migration
       t.text :past_injury, array: true
       t.text :injury_history, array: true
       t.text :training_style, array: true
-      t.string :appointment_lengths, array: true
-      t.string :group_training, array: true
+      t.text :appointment_lengths, array: true
+      t.text :group_training, array: true
       t.boolean :consent_waiver
       t.references :user, index: true
 
