@@ -31,25 +31,25 @@ ActiveRecord::Schema.define(version: 20150429184013) do
 
   create_table "fitness_professional_profiles", force: :cascade do |t|
     t.string   "ethnicity"
-    t.string   "training_location"
+    t.text     "training_location",                         array: true
     t.text     "client_space_descrip"
     t.text     "independent_facility_descrip"
     t.text     "membership_facility_descrip"
     t.text     "private_facility_descrip"
     t.text     "credentials"
-    t.text     "goals",                        default: [],              array: true
+    t.text     "goals",                                     array: true
     t.text     "goal_specifics"
-    t.text     "medical_conditions",           default: [],              array: true
-    t.text     "orthopedic_injury_experience", default: [],              array: true
-    t.text     "population_experience",        default: [],              array: true
+    t.text     "medical_conditions",                        array: true
+    t.text     "orthopedic_injury_experience",              array: true
+    t.text     "population_experience",                     array: true
     t.text     "athlete_experience"
-    t.text     "training_style",               default: [],              array: true
-    t.text     "appointment_lengths",          default: [],              array: true
-    t.text     "group_training",               default: [],              array: true
+    t.text     "training_style",                            array: true
+    t.text     "appointment_lengths",                       array: true
+    t.text     "group_training",                            array: true
     t.boolean  "consent_waiver"
     t.integer  "user_id"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "fitness_professional_profiles", ["user_id"], name: "index_fitness_professional_profiles_on_user_id", using: :btree
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(version: 20150429184013) do
     t.text     "past_injury",                               array: true
     t.text     "injury_history",                            array: true
     t.text     "training_style",                            array: true
-    t.string   "appointment_lengths",                       array: true
-    t.string   "group_training",                            array: true
+    t.text     "appointment_lengths",                       array: true
+    t.text     "group_training",                            array: true
     t.boolean  "consent_waiver"
     t.integer  "user_id"
     t.datetime "created_at",                   null: false
