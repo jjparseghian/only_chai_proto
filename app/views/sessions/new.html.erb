@@ -1,0 +1,13 @@
+<%= form_for(:user, html: { class: "small-6 small-centered columns" } ) do |f| %>
+    First name: <%= f.text_field :first_name %><br />
+    Last name: <%= f.text_field :last_name %><br />
+    Email: <%= f.email_field :email %><br />
+    Phone: <%= f.telephone_field :phone %><br />
+    Male: <%= f.radio_button :gender, "male" %>&nbsp&nbsp
+    Female: <%= f.radio_button :gender, "female" %><br />
+    Birth Date: <%= f.date_field :birth_date %><br />
+    Password: <%= f.password_field :password %><br />
+    Password Confirmation: <%= f.password_field :password_confirmation %><br />
+    Client: <%= f.radio_button :user_type, 'Client' %>&nbsp&nbsp Fitness Professional <%= f.radio_button :user_type, 'Fitness_Professional' %><br />
+    <%= f.submit "Sign Up", :class => 'button radius' %>
+<% end %>

@@ -1,12 +1,19 @@
 class SessionsController < ApplicationController
-  def signin
-    @user = User.find_by(id: params[:id])
+  def login
+    # render 'login'
+  end
 
-    if @user && @user.authenticate(password: params[:password])
+  def signin
+    @user = User.find_by(email: params[:user][:email])
+
+    if @user && @user.authenticate(params[:user][:password])
       # redirect to members page
-      "successful signin"
+      session[:user_id] = @user.id
+      redirect_to '/'
     else
-      "something went wrong"
+      flash[:error] = "Login error"
+      p "something went wrong"
+      render 'login'
     end
   end
 
@@ -20,7 +27,7 @@ class SessionsController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       "successful user creation"
-      # redirect to new member page
+      redirect_to new_profile_path
     else
       flash[:notice] = "Error Signing Up"
     end
@@ -58,6 +65,6 @@ class SessionsController < ApplicationController
   private
 
     def allowed_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_type, :phone, :gender, :birth_date)
     end
 end

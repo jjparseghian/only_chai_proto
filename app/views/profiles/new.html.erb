@@ -1,0 +1,5 @@
+<% if current_user.user_type == "Client" %>
+  <%= render "client_form" %>
+<% elsif current_user.user_type == "Fitness_Professional" %>
+  <%= render "fitness_professional_form" %>
+<% end %>
