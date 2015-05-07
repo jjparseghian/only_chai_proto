@@ -49,3 +49,41 @@ body {
   background-color: #2CBFCD;
 }
 
+.h7, .highlight {
+  color: #00EEFC;
+}
+
+h2, h3, .sub-heading, .sub-title {
+  color: white;
+}
+
+.orbit-slide-number {
+  display: none;
+}
+
+/*.orbit-container {
+  background-color: rgba(0, 0, 0, .5);
+}
+*/
+
+
+.orbit-slides-container li div blockquote {
+  color: white;
+  text-align: center;
+  border-left: none;
+}
+
+.trans-bg {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.socials li {
+  display: inline-block;
+  width: 50px;
+  padding: 0px;
+  margin: 10px;
+}
+
+.copyright {
+  color:  white;
+}
