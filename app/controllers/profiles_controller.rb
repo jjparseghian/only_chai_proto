@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
       @client = MemberProfile.new(client_params)
       if @client.save
         p "Client profile created successfully"
+        redirect_to members_show_path
       else
         p "Something went wrong"
       end
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
       @fitness_professional = FitnessProfessionalProfile.new(fitness_professional_params)
       if @fitness_professional.save
         p "Successfully created fitness professional profile"
+        redirect_to members_show_path
       else
         p "Error creating fitness professional profile"
       end
