@@ -11,6 +11,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :photo_url
       t.string :password_digest
       t.references :address
+      t.references :member_profile
+      t.references :fitness_professional_profile
 
       t.timestamps null: false
     end
