@@ -1,13 +1,69 @@
-<%= form_for(:user, html: { class: "small-6 small-centered columns" } ) do |f| %>
-    First name: <%= f.text_field :first_name %><br />
-    Last name: <%= f.text_field :last_name %><br />
-    Email: <%= f.email_field :email %><br />
-    Phone: <%= f.telephone_field :phone %><br />
-    Male: <%= f.radio_button :gender, "male" %>&nbsp&nbsp
-    Female: <%= f.radio_button :gender, "female" %><br />
-    Birth Date: <%= f.date_field :birth_date %><br />
-    Password: <%= f.password_field :password %><br />
-    Password Confirmation: <%= f.password_field :password_confirmation %><br />
-    Client: <%= f.radio_button :user_type, 'Client' %>&nbsp&nbsp Fitness Professional <%= f.radio_button :user_type, 'Fitness_Professional' %><br />
-    <%= f.submit "Sign Up", :class => 'button radius' %>
-<% end %>
+<div class="container small-12 columns text-center">
+    <fieldset class="small-10 small-centered columns trans-bg">
+        <%= form_for(:user) do |f| %>
+            <div class="row">
+                <div class="small-12 medium-6 large-6 columns">
+                    <%= f.label :first_name %>
+                    <%= f.text_field :first_name %>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-6 large-6 columns">
+                    <%= f.label :email %>
+                    <%= f.email_field :email %>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <%= f.label :phone %>
+                    <%= f.telephone_field :phone %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-4 large-4 columns">
+                    <%= f.label :male %>
+                    <%= f.radio_button :gender, "male" %>
+                </div>
+                <div class="small-12 medium-4 large-4 columns">
+                    <%= f.label :female %>
+                    <%= f.radio_button :gender, "female" %>
+                </div>
+                <div class="small-12 medium-4 large-4 columns">
+                    <%= f.label :birth_date %>
+                    <%= f.date_field :birth_date %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-3 large-3 columns">
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+                <div class="small-12 medium-3 large-3 columns">
+                    <%= f.label :password_confirmation %>
+                    <%= f.password_field :password_confirmation %>
+                </div>
+                <div class="small-12 medium-3 large-3 columns">
+                    <%= f.label :client %>
+                    <%= f.radio_button :user_type, 'Client' %>
+                </div>
+                <div class="small-12 medium-3 large-3 columns">
+                    <%= f.label :Fitness_Professional %>
+                    <%= f.radio_button :user_type, 'Fitness_Professional' %>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="small-12 medium-4 large-6 small-centered columns">
+                    <%= f.submit "Sign Up", :class => 'button expand radius success' %>
+                </div>
+            </div>
+        <% end %>
+    </fieldset>
+</div>

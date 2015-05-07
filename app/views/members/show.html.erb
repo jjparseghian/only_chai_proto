@@ -1,0 +1,70 @@
+<h2 class="trans-bg">Member Home</h2>
+<div id="dashboard-container" class="small-12 columns">
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 large-6 columns">
+      <div id="q1" class="panel" data-equalizer-watch>
+        <h4>Current Trainer / Wellness Professional</h4>
+        <!-- <img class="th "src="<%= @trainer.photo_url %>"> -->
+        <p><%= image_tag @trainer.photo_url, class: "th", size: "150x150" %></p>
+        <p><%= @trainer.first_name + " " + @trainer.last_name %></p>
+        <div class="row">
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Review</a></div>
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Book</a></div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Reschedule</a></div>
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Cancel</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-6 large-6 columns">
+      <div id="q2" class="panel" data-equalizer-watch>
+        <h4>Find New Trainer</h4>
+        <p>Recommended Trainers</p>
+        <div class="row">
+          <ul class="small-block-grid-3">
+            <% @trainers.each do |trainer| %>
+              <li>
+                <img class="th "src="<%= trainer.photo_url %>">
+                <p><%= trainer.first_name + " " + trainer.last_name %></p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Search</a></div>
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Book</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 large-6 columns">
+      <div id="q3" class="panel" data-equalizer-watch>
+        <h4>Current Progress</h4>
+        <h6>Goal Weight: 120 lbs</h6>
+        <div class="progress [small-# large-#] success [radius round]">
+          <span class="meter" style="width: 75%"></span>
+        </div>
+        <h6>Goal Mile Time: 8 minutes</h6>
+        <div class="progress [small-# large-#] [secondary alert success] [radius round]">
+          <span class="meter" style="width: 53%"></span>
+        </div>
+        <p>Some Content will be placed here......</p>
+        <div class="row">
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Add New Target</a></div>
+          <div class="small-12 medium-6 large-6 columns"><a href="#" class="button expand radius">Review Progress</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-6 large-6 columns">
+      <div id="q4" class="panel" data-equalizer-watch>
+        <h4>Keep Pushing</h4>
+        <p>Fitness Goals and Fun Facts</p>
+        <% for sentence in Faker::Lorem.sentences(3) %>
+          <blockquote><%= sentence %></blockquote>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

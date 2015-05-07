@@ -32,6 +32,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Faker
+gem "faker"
+
+# Puma
+gem "puma"
+
 # Foundation
 gem 'foundation-rails'
 

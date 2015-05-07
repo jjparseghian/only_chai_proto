@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       # redirect to members page
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to members_show_path
     else
       flash[:error] = "Login error"
       p "something went wrong"

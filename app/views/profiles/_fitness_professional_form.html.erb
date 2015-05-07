@@ -1,143 +1,173 @@
-<h1>Trainer Intake Form</h1>
-<div class="small-8 small-centered columns">
-  <%= form_tag('/profiles') do %>
-    <%= label_tag :ethnicity %>
-    <%= radio_button_tag "fitness_professional[ethnicity]", "white / caucasian" %>
-    <%= label_tag "fitness_professional[ethnicity]", "white / caucasian" %><br />
-    <%= radio_button_tag "fitness_professional[ethnicity]", "African American" %>
-    <%= label_tag "fitness_professional[ethnicity]", "African American" %><br />
-    <%= radio_button_tag "fitness_professional[ethnicity]", "Latin American" %>
-    <%= label_tag "fitness_professional[ethnicity]", "Latin American" %><br />
-    <%= radio_button_tag "fitness_professional[ethnicity]", "Asian / Pacific Island Descent" %>
-    <%= label_tag "fitness_professional[ethnicity]", "Asian / Pacific Island Descent" %><br />
-    <%= radio_button_tag "fitness_professional[ethnicity]", "Native American" %>
-    <%= label_tag "fitness_professional[ethnicity]", "Native American" %><br />
-    <%= radio_button_tag "fitness_professional[ethnicity]", "other" %>
-    <%= label_tag "fitness_professional[ethnicity]", "other" %><br />
+<h2 class="text-center trans-bg">Trainer Intake Form</h2>
+<div class="container small-12 columns">
+    <fieldset class="small-12 small-centered columns trans-bg">
+      <%= form_tag('/profiles') do %>
+      <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :ethnicity %>
+                <%= radio_button_tag "fitness_professional[ethnicity]", "white / caucasian" %>
+                <%= label_tag "fitness_professional[ethnicity]", "white / caucasian" %><br />
+                <%= radio_button_tag "fitness_professional[ethnicity]", "African American" %>
+                <%= label_tag "fitness_professional[ethnicity]", "African American" %><br />
+                <%= radio_button_tag "fitness_professional[ethnicity]", "Latin American" %>
+                <%= label_tag "fitness_professional[ethnicity]", "Latin American" %><br />
+                <%= radio_button_tag "fitness_professional[ethnicity]", "Asian / Pacific Island Descent" %>
+                <%= label_tag "fitness_professional[ethnicity]", "Asian / Pacific Island Descent" %><br />
+                <%= radio_button_tag "fitness_professional[ethnicity]", "Native American" %>
+                <%= label_tag "fitness_professional[ethnicity]", "Native American" %><br />
+                <%= radio_button_tag "fitness_professional[ethnicity]", "other" %>
+                <%= label_tag "fitness_professional[ethnicity]", "other" %><br />
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :training_location %>
+                <%= check_box_tag "fitness_professional[training_location][]", "will go to client space" %>
+                <%= label_tag "fitness_professional[training_location][]", "I will go the client's space" %><br />
+                <%= check_box_tag "fitness_professional[training_location][]", "train at independent facility" %>
+                <%= label_tag "fitness_professional[training_location][]", "I train at an independent facility" %><br />
+                <%= check_box_tag "fitness_professional[training_location][]", "train at fitness facility that requires membership" %>
+                <%= label_tag "fitness_professional[training_location][]", "I train at a fitness facility that requires a monthly membership" %><br />
+                <%= check_box_tag "fitness_professional[training_location][]", "private facility" %>
+                <%= label_tag "fitness_professional[training_location][]", "I have my own private facility" %><br />
+                <%= label_tag "fitness_professional[training_location][]", "Other:" %><br />
+                <%= text_field_tag "fitness_professional[training_location][]" %>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :credentials %>
+                <p>Please list any/all credentials and certifications relevant to your field, including a link to the description of each credential/certification. This will go towards setting your hourly rate.</p>
+                <%= text_area_tag "fitness_professional[credentials]" %>
+            </div>
+        </div>
+        <hr>
+
+        <%= label_tag "Goal-Related Skill Sets" %>
+        <%= check_box_tag "fitness_professional[goals][]", "improve chronic conditions" %>
+        <%= label_tag "fitness_professional[goals][]", "Improve Chronic Health Conditions  (please specify in next question)" %><br />
+        <%= check_box_tag "fitness_professional[goals][]", "get lean / fat loss" %>
+        <%= label_tag "fitness_professional[goals][]", "Get Lean / Fat Loss" %><br />
+        <%= check_box_tag "fitness_professional[goals][]", "gain lean mass / muscle" %>
+        <%= label_tag "fitness_professional[goals][]", "Gain Lean Mass / Muscle" %><br />
+        <%= check_box_tag "fitness_professional[goals][]", "train for event" %>
+        <%= label_tag "fitness_professional[goals][]", "Train for an Event  (please specify in next question)" %><br />
+        <%= check_box_tag "fitness_professional[goals][]", "train for sport" %>
+        <%= label_tag "fitness_professional[goals][]", "Train for a Sport (please specify in next question)" %><br />
+        <%= check_box_tag "fitness_professional[goals][]", "train for specific fitness component" %>
+        <%= label_tag "fitness_professional[goals][]", "Train for a Specific Fitness Component (i.e. speed, agility, power)  (please specify in next question)" %><br />
+        <%= label_tag "fitness_professional[goals][]", "Other:" %><br />
+        <%= text_field_tag "fitness_professional[goals][]" %>
+
+        <%= label_tag :goal_specifics %>
+        <p>Please indicate the specific chronic health, event, sport or fitness components you specialize in if you checked one of those responses above.</p>
+        <%= text_area_tag "fitness_professional[goal_specifics]" %>
+
+        <%= label_tag :medical_conditions %>
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "disease risk factors" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Disease Risk Factors (i.e. High Blood Pressure, High Cholesterol, Insulin Resistance)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "cardiovascular disease" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Cardiovascular Disease (i.e. Coronary Heart Disease, Heart Failure, Sickle Cell)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "pulminary disease" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Pulmonary Disease (i.e. Asthma, Emphysema, COPD, Chronic Bronchitis)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "metabolic disease" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Metabolic Disease (i.e. Kidney Disease, Type 1 or Type 2 Diabetes)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "neuromuscular disease" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Neuromuscular Disease (i.e. Stroke, Cerebral Palsy, Multiple Sclerosis, Parkinson's)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "musculoskeletal condtions" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Musculoskeletal Conditions (i.e. Osteoporosis, Osteoarthritis, Rheumatoid Arthritis, Chronic Pain, Amputation)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "immune-compromised condition" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "Immune-Compromised Condition (i.e. Cancer, HIV, AIDS, Chronic Fatigue Syndrome, etc.)" %><br />
+        <%= check_box_tag "fitness_professional[medical_conditions][]", "prefer not to disclose" %>
+        <%= label_tag "fitness_professional[medical_conditions][]", "I do have a condition, but would prefer not to disclose. (please note this affects our ability to pair you with the best health professional)" %><br />
+        <%= label_tag "fitness_professional[medical_conditions][]", "Other:" %><br />
+        <%= text_field_tag "fitness_professional[medical_conditions][]" %>
+
+        <hr>
+
+        <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :orthopedic_injury_experience %>
+                <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "upper body" %>
+                <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Upper Body" %><br />
+                <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "lower back / torso" %>
+                <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Lower Back / Torso" %><br />
+                <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "lower body" %>
+                <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Lower Body" %><br />
+                <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Other:" %><br />
+                <%= text_field_tag "fitness_professional[orthopedic_injury_experience][]" %>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :population_experience %>
+                <%= check_box_tag "fitness_professional[population_experience][]", "<14" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Kids (<14)" %><br />
+                <%= check_box_tag "fitness_professional[population_experience][]", "14-17" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Adolescents (14-17)" %><br />
+                <%= check_box_tag "fitness_professional[population_experience][]", "65+" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Older Population (65+)" %><br />
+                <%= check_box_tag "fitness_professional[population_experience][]", "BMI > 30" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Obese (BMI > 30)" %><br />
+                <%= check_box_tag "fitness_professional[population_experience][]", "pregnancy" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Pre/Post-Partum (Pregnancy)" %><br />
+                <%= check_box_tag "fitness_professional[population_experience][]", "athletes" %>
+                <%= label_tag "fitness_professional[population_experience][]", "Athletes - please specify sport on next question" %><br />
+                <%= label_tag "fitness_professional[population_experience][]", "Other:" %><br />
+                <%= text_field_tag "fitness_professional[population_experience][]" %>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :athlete_experience %>
+                <p>Please indicate which sports you have experience working with. Credentials/work experience will be checked.</p>
+                <%= text_area_tag "fitness_professional[athlete_experience]" %>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :training_style %>
+                <%= check_box_tag "fitness_professional[training_style][]", "motivator" %>
+                <%= label_tag "fitness_professional[training_style][]", "Motivator" %><br />
+                <%= check_box_tag "fitness_professional[training_style][]", "coach" %>
+                <%= label_tag "fitness_professional[training_style][]", "Coach" %><br />
+                <%= check_box_tag "fitness_professional[training_style][]", "olympian" %>
+                <%= label_tag "fitness_professional[training_style][]", "Olympian" %><br />
+                <%= check_box_tag "fitness_professional[training_style][]", "drill sargeant" %>
+                <%= label_tag "fitness_professional[training_style][]", "Drill Sargeant" %><br />
+                <%= check_box_tag "fitness_professional[training_style][]", "analyzer" %>
+                <%= label_tag "fitness_professional[training_style][]", "Analyzer" %><br />
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :appointment_lengths %>
+                <%= check_box_tag "fitness_professional[appointment_lengths][]", "30" %>
+                <%= label_tag "fitness_professional[appointment_lengths][]", "30 Minutes" %><br />
+                <%= check_box_tag "fitness_professional[appointment_lengths][]", "60" %>
+                <%= label_tag "fitness_professional[appointment_lengths][]", "60 Minutes" %><br />
+                <%= check_box_tag "fitness_professional[appointment_lengths][]", "90" %>
+                <%= label_tag "fitness_professional[appointment_lengths][]", "90 Minutes" %><br />
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+                <%= label_tag :group_training %>
+                <%= check_box_tag "fitness_professional[group_training][]", "1-1" %>
+                <%= label_tag "fitness_professional[group_training][]", "1-on-1 only" %><br />
+                <%= check_box_tag "fitness_professional[group_training][]", "2-4" %>
+                <%= label_tag "fitness_professional[group_training][]", "2 to 4 people" %><br />
+                <%= check_box_tag "fitness_professional[group_training][]", "5-10" %>
+                <%= label_tag "fitness_professional[group_training][]", "5 to 10 people" %><br />
+                <%= check_box_tag "fitness_professional[group_training][]", "10+" %>
+                <%= label_tag "fitness_professional[group_training][]", "10+ people (MAX 20)" %><br />
+            </div>
+        </div>
+        <hr>
+
+        <div class="row text-center">
+            <div class="small-10columns">
+                <%= label_tag "Ethics, Liability Insurance and Waiver" %>
+                <p>By checking the box below, I attest that as a certified practitioner in my field, I follow the ethical guidelines proscribed by my credentialing organization, carry the required amount of liability insurance and provide appropriate waivers and informed consents to my clients before working with them. I understand that this is my responsibility.</p>
+                <%= check_box_tag "fitness_professional[consent_waiver]", true %>
+                <%= label_tag "fitness_professional[consent_waiver]", "I understand and agree." %><br />
+
+                <%= submit_tag "Submit", :class => "button radius" %>
+            </div>
+        </div>
 
 
-    <%= label_tag :training_location %>
-    <%= check_box_tag "fitness_professional[training_location][]", "will go to client space" %>
-    <%= label_tag "fitness_professional[training_location][]", "I will go the client's space" %><br />
-    <%= check_box_tag "fitness_professional[training_location][]", "train at independent facility" %>
-    <%= label_tag "fitness_professional[training_location][]", "I train at an independent facility" %><br />
-    <%= check_box_tag "fitness_professional[training_location][]", "train at fitness facility that requires membership" %>
-    <%= label_tag "fitness_professional[training_location][]", "I train at a fitness facility that requires a monthly membership" %><br />
-    <%= check_box_tag "fitness_professional[training_location][]", "private facility" %>
-    <%= label_tag "fitness_professional[training_location][]", "I have my own private facility" %><br />
-    <%= label_tag "fitness_professional[training_location][]", "Other:" %><br />
-    <%= text_field_tag "fitness_professional[training_location][]" %>
 
-    <%= label_tag :credentials %>
-    <p>Please list any/all credentials and certifications relevant to your field, including a link to the description of each credential/certification. This will go towards setting your hourly rate.</p>
-    <%= text_area_tag "fitness_professional[credentials]" %>
-
-    <%= label_tag "Goal-Related Skill Sets" %>
-    <%= check_box_tag "fitness_professional[goals][]", "improve chronic conditions" %>
-    <%= label_tag "fitness_professional[goals][]", "Improve Chronic Health Conditions  (please specify in next question)" %><br />
-    <%= check_box_tag "fitness_professional[goals][]", "get lean / fat loss" %>
-    <%= label_tag "fitness_professional[goals][]", "Get Lean / Fat Loss" %><br />
-    <%= check_box_tag "fitness_professional[goals][]", "gain lean mass / muscle" %>
-    <%= label_tag "fitness_professional[goals][]", "Gain Lean Mass / Muscle" %><br />
-    <%= check_box_tag "fitness_professional[goals][]", "train for event" %>
-    <%= label_tag "fitness_professional[goals][]", "Train for an Event  (please specify in next question)" %><br />
-    <%= check_box_tag "fitness_professional[goals][]", "train for sport" %>
-    <%= label_tag "fitness_professional[goals][]", "Train for a Sport (please specify in next question)" %><br />
-    <%= check_box_tag "fitness_professional[goals][]", "train for specific fitness component" %>
-    <%= label_tag "fitness_professional[goals][]", "Train for a Specific Fitness Component (i.e. speed, agility, power)  (please specify in next question)" %><br />
-    <%= label_tag "fitness_professional[goals][]", "Other:" %><br />
-    <%= text_field_tag "fitness_professional[goals][]" %>
-
-    <%= label_tag :goal_specifics %>
-    <p>Please indicate the specific chronic health, event, sport or fitness components you specialize in if you checked one of those responses above.</p>
-    <%= text_area_tag "fitness_professional[goal_specifics]" %>
-
-    <%= label_tag :medical_conditions %>
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "disease risk factors" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Disease Risk Factors (i.e. High Blood Pressure, High Cholesterol, Insulin Resistance)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "cardiovascular disease" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Cardiovascular Disease (i.e. Coronary Heart Disease, Heart Failure, Sickle Cell)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "pulminary disease" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Pulmonary Disease (i.e. Asthma, Emphysema, COPD, Chronic Bronchitis)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "metabolic disease" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Metabolic Disease (i.e. Kidney Disease, Type 1 or Type 2 Diabetes)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "neuromuscular disease" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Neuromuscular Disease (i.e. Stroke, Cerebral Palsy, Multiple Sclerosis, Parkinson's)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "musculoskeletal condtions" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Musculoskeletal Conditions (i.e. Osteoporosis, Osteoarthritis, Rheumatoid Arthritis, Chronic Pain, Amputation)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "immune-compromised condition" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "Immune-Compromised Condition (i.e. Cancer, HIV, AIDS, Chronic Fatigue Syndrome, etc.)" %><br />
-    <%= check_box_tag "fitness_professional[medical_conditions][]", "prefer not to disclose" %>
-    <%= label_tag "fitness_professional[medical_conditions][]", "I do have a condition, but would prefer not to disclose. (please note this affects our ability to pair you with the best health professional)" %><br />
-    <%= label_tag "fitness_professional[medical_conditions][]", "Other:" %><br />
-    <%= text_field_tag "fitness_professional[medical_conditions][]" %>
-
-    <%= label_tag :orthopedic_injury_experience %>
-    <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "upper body" %>
-    <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Upper Body" %><br />
-    <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "lower back / torso" %>
-    <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Lower Back / Torso" %><br />
-    <%= check_box_tag "fitness_professional[orthopedic_injury_experience][]", "lower body" %>
-    <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Lower Body" %><br />
-    <%= label_tag "fitness_professional[orthopedic_injury_experience][]", "Other:" %><br />
-    <%= text_field_tag "fitness_professional[orthopedic_injury_experience][]" %>
-
-    <%= label_tag :population_experience %>
-    <%= check_box_tag "fitness_professional[population_experience][]", "<14" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Kids (<14)" %><br />
-    <%= check_box_tag "fitness_professional[population_experience][]", "14-17" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Adolescents (14-17)" %><br />
-    <%= check_box_tag "fitness_professional[population_experience][]", "65+" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Older Population (65+)" %><br />
-    <%= check_box_tag "fitness_professional[population_experience][]", "BMI > 30" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Obese (BMI > 30)" %><br />
-    <%= check_box_tag "fitness_professional[population_experience][]", "pregnancy" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Pre/Post-Partum (Pregnancy)" %><br />
-    <%= check_box_tag "fitness_professional[population_experience][]", "athletes" %>
-    <%= label_tag "fitness_professional[population_experience][]", "Athletes - please specify sport on next question" %><br />
-    <%= label_tag "fitness_professional[population_experience][]", "Other:" %><br />
-    <%= text_field_tag "fitness_professional[population_experience][]" %>
-
-    <%= label_tag :athlete_experience %>
-    <p>Please indicate which sports you have experience working with. Credentials/work experience will be checked.</p>
-    <%= text_area_tag "fitness_professional[athlete_experience]" %>
-
-    <%= label_tag :training_style %>
-    <%= check_box_tag "fitness_professional[training_style][]", "motivator" %>
-    <%= label_tag "fitness_professional[training_style][]", "Motivator" %><br />
-    <%= check_box_tag "fitness_professional[training_style][]", "coach" %>
-    <%= label_tag "fitness_professional[training_style][]", "Coach" %><br />
-    <%= check_box_tag "fitness_professional[training_style][]", "olympian" %>
-    <%= label_tag "fitness_professional[training_style][]", "Olympian" %><br />
-    <%= check_box_tag "fitness_professional[training_style][]", "drill sargeant" %>
-    <%= label_tag "fitness_professional[training_style][]", "Drill Sargeant" %><br />
-    <%= check_box_tag "fitness_professional[training_style][]", "analyzer" %>
-    <%= label_tag "fitness_professional[training_style][]", "Analyzer" %><br />
-
-    <%= label_tag :appointment_lengths %>
-    <%= check_box_tag "fitness_professional[appointment_lengths][]", "30" %>
-    <%= label_tag "fitness_professional[appointment_lengths][]", "30 Minutes" %><br />
-    <%= check_box_tag "fitness_professional[appointment_lengths][]", "60" %>
-    <%= label_tag "fitness_professional[appointment_lengths][]", "60 Minutes" %><br />
-    <%= check_box_tag "fitness_professional[appointment_lengths][]", "90" %>
-    <%= label_tag "fitness_professional[appointment_lengths][]", "90 Minutes" %><br />
-
-    <%= label_tag :group_training %>
-    <%= check_box_tag "fitness_professional[group_training][]", "1-1" %>
-    <%= label_tag "fitness_professional[group_training][]", "1-on-1 only" %><br />
-    <%= check_box_tag "fitness_professional[group_training][]", "2-4" %>
-    <%= label_tag "fitness_professional[group_training][]", "2 to 4 people" %><br />
-    <%= check_box_tag "fitness_professional[group_training][]", "5-10" %>
-    <%= label_tag "fitness_professional[group_training][]", "5 to 10 people" %><br />
-    <%= check_box_tag "fitness_professional[group_training][]", "10+" %>
-    <%= label_tag "fitness_professional[group_training][]", "10+ people (MAX 20)" %><br />
-
-    <%= label_tag "Ethics, Liability Insurance and Waiver" %>
-    <p>By checking the box below, I attest that as a certified practitioner in my field, I follow the ethical guidelines proscribed by my credentialing organization, carry the required amount of liability insurance and provide appropriate waivers and informed consents to my clients before working with them. I understand that this is my responsibility.</p>
-    <%= check_box_tag "fitness_professional[consent_waiver]", true %>
-    <%= label_tag "fitness_professional[consent_waiver]", "I understand and agree." %><br />
-
-    <%= submit_tag "Submit", :class => "button radius" %>
-
-  <% end %>
+      <% end %>
+    </fieldset>
 </div>
