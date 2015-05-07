@@ -35,6 +35,8 @@
               </ul>
             </li> -->
             <% if current_user  %>
+              <li><a href="members/show"><%= current_user.email %></a></li>
+              <li><a href="#">Rewards: $0.00</a></li>
               <li><a href="/signout">logout</a></li>
             <% end %>
           </ul>
@@ -42,11 +44,11 @@
           <!-- Left Nav Section -->
 
           <ul id="links" class="left">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Stories</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li><a href="#about" data-magellan-destination="about">About</a></li>
+            <li><a href="http://blog.onlychai.com">Blog</a></li>
+            <li><a href="#feedback">Stories</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#footer">Contacts</a></li>
           </ul>
         </section>
       </nav>
